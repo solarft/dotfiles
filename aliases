@@ -1,0 +1,5 @@
+alias tree="exa --tree"
+alias ls=exa
+alias cd=z
+alias yeet="paru -Rns"
+alias yeet-orphans="paru -Qtqd | paru -Rns -"

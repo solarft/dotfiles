@@ -1,0 +1,34 @@
+#!/usr/bin/bash
+
+# variables
+config=$HOME/.config/hypr
+scripts=$config/scripts
+
+# notification daemon
+#mako &
+swaync &
+#dunst &
+
+hypridle &
+#swayidle -w timeout 300 'hyprlock' timeout 600 'hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on' before-sleep 'hyprlock' &
+
+#!/bin/bash
+
+fcitx5 &
+
+# waybar
+$scripts/launch_waybar &
+#$scripts/tools/dynamic &
+
+# wallpaper
+hyprpaper -c ~/.config/hypr/hyprpaper.conf &
+
+# effects
+#$scripts/rgb &
+
+/usr/bin/easyeffects --gapplication-service &
+
+# other
+gnome-keyring-daemon --start --components=secrets &
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+dbus-update-activation-environment --systemd DISPLAY XAUTHORITY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &

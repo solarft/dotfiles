@@ -1,0 +1,21 @@
+anchor = top
+width = 100%
+height = 25
+horizontal = true
+font = "JetBrainsMono Nerd Font"
+font-size = 10
+prompt-text = " run: "
+outline-width = 0
+border-width = 0
+background-color = #282828
+min-input-width = 120
+result-spacing = 15
+padding-top = 3
+padding-bottom = 0
+padding-left = 0
+padding-right = 0
+
+prompt-color = #d79921
+input-color = #fabd2f
+default-result-color = #ebdbb2
+selection-color = #fb4934

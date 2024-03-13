@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+
+grim -g "$(slurp)" - | curl -F file=@'-' -X POST https://solarft.questionable.link/api/files/create >~/Pictures/Screenshots/tempUpload.json
+cat ~/Pictures/Screenshots/tempUpload.json | jq -r '.url' | wl-copy

@@ -1,0 +1,155 @@
+@define-color bg-bar rgba(40, 40, 40, 1.0);
+@define-color dark-box #32302f;
+@define-color trdark-box rgba(40, 40, 40, 0.8);
+@define-color light-box #3c3836;
+@define-color light-fg #d4be98;
+@define-color dark-fg #fabd2f;
+@define-color selected #e78a4e;
+@define-color warning #d8a657;
+@define-color critical #ea6962;
+@define-color good #a9b665;
+@define-color info #7daea3;
+@define-color separator #46413e;
+
+* {
+  /* color: @light-fg; */
+  font-size: 13px;
+  border: none;
+  border-radius: 0;
+  font-family: JetBrainsMono Nerd Font;
+}
+
+#waybar {
+  background: @bg-bar;
+}
+
+#workspaces button {
+  background: @bg-bar;
+  color: #d79921;
+  padding: 0px 8px 1px 5px;
+  border-left: 2px solid @separator;
+}
+
+#workspaces button:first-child {
+  background: @bg-bar;
+  border-left: 0px;
+}
+
+#workspaces button.focused {
+  background: @light-box;
+  box-shadow: inset 0 -3px @selected;
+}
+
+#workspaces button.urgent {
+  color: @dark-fg;
+  background: @critical;
+}
+
+#workspaces button:hover,
+#workspaces button.focused:hover,
+#workspaces button.visible:hover {
+  color: @dark-fg;
+  background: @warning;
+}
+
+#window {
+  padding-left: 5px;
+  border-bottom: 3px solid #fb4934;
+  border-left: 2px solid @separator;
+}
+
+/*
+ * Arrows
+ */
+#custom-arrow-light-on-bg-left {
+  font-size: 15px;
+  color: @light-box;
+  background: transparent;
+}
+
+#custom-arrow-light-on-bg-right {
+  font-size: 15px;
+  color: @light-box;
+  background: transparent;
+}
+
+#custom-arrow-light-on-dark-left,
+#custom-arrow-light-on-dark-right {
+  font-size: 15px;
+  color: @light-box;
+  background: @dark-box;
+}
+
+#custom-arrow-dark-on-light-left,
+#custom-arrow-dark-on-light-right {
+  font-size: 15px;
+  color: @dark-box;
+  background: @light-box;
+}
+
+/*
+ * General background
+ */
+#network,
+#memory,
+#backlight,
+#language,
+#tray,
+#custom-weather {
+  background: @dark-box;
+  padding: 0 3 0 3;
+}
+
+#cpu,
+#wireplumber,
+#pulseaudio,
+#temperature,
+#battery,
+#custom-notification,
+#custom-crypto,
+#custom-updates {
+  background: @light-box;
+  padding: 0 3 0 3;
+}
+
+/*
+ * Warning plugins state
+ */
+#memory.warning,
+#cpu.warning,
+#battery.warning {
+  color: @warning;
+}
+
+/*
+ * Critical plugins state
+ */
+#cpu.critical,
+#temperature.critical,
+#memory.critical,
+#battery.critical,
+#network.disconnected {
+  color: @critical;
+}
+
+#mode {
+  color: @dark-fg;
+  background: @critical;
+}
+
+#battery.charging {
+  color: @good;
+}
+
+#battery.plugged {
+  color: @info;
+}
+
+#pulseaudio.bluetooth {
+  color: @info;
+}
+
+tooltip {
+  background: @trdark-box;
+}
+
